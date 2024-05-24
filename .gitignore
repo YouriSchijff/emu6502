@@ -1,0 +1,56 @@
+###########################
+##### General Ignores #####
+###########################
+
+# Testing and Logging
+test/
+*.log
+*.txt
+
+# Coverage Files
+*.gcno
+*.gcda
+
+# IDE
+.vs/
+.idea/
+.vscode/
+
+# Binaries
+bin/
+*.exe
+*.dll
+*.o
+*.a
+*.so
+*.lib
+*.pri
+*.exp
+
+# Intermediates
+obj/
+[Dd]ebug*/
+[Rr]elease*/
+
+# Excluding
+!scripts/premake/bin
+!premake5.exe
+!LICENSE.txt
+
+#########################
+##### Build systems #####
+#########################
+
+# General
+build/
+
+# Make
+Makefile
+*.make
+
+# Visual Studio
+**.sln
+**.csproj
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
