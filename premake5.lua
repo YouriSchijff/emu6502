@@ -16,8 +16,8 @@ project "6502"
 
     includedirs { "src" }
 
-    targetdir("../bin/" .. OutputDir .. "/%{prj.name}")
-    objdir("../bin/obj/" .. OutputDir .. "/%{prj.name}")
+    targetdir("./bin/" .. OutputDir .. "/%{prj.name}")
+    objdir("./bin/obj/" .. OutputDir .. "/%{prj.name}")
 
     filter "configurations:Debug"
        defines { "DEBUG" }
