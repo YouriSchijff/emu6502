@@ -60,7 +60,7 @@ This project is inspired by [Dave Poo 6502 Emulation series](https://www.youtube
 
 - [ ] Restricted mode (Restrict writing the stack)
 - [ ] All Load/Store Operations
-- [ ] All Register Transfers
+- [x] All Register Transfers
 - [x] All Stack Operations
 - [ ] All Logical Operations
 - [ ] All Arithmetic Operations

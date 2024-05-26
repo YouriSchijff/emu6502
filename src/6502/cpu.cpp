@@ -419,8 +419,8 @@ void CPU::execute(int cycles, Memory &memory) {
 
 		if (instruction == Instruction::TSX) {
 			X = SP;
-			setFlag(CPU_ZERO_FLAG, (A == 0));
-			setFlag(CPU_NEGATIVE_FLAG, (A & 0b10000000) > 0);
+			setFlag(CPU_ZERO_FLAG, (X == 0));
+			setFlag(CPU_NEGATIVE_FLAG, (X & 0b10000000) > 0);
 
 			cycles--;
 
@@ -633,6 +633,47 @@ void CPU::execute(int cycles, Memory &memory) {
 			A ^= readByte(cycles, address, memory);
 			setFlag(CPU_ZERO_FLAG, (A == 0));
 			setFlag(CPU_NEGATIVE_FLAG, (A & 0b10000000) > 0);
+
+			handled = true;
+			continue;
+		}
+
+		if (instruction == Instruction::TAX) {
+			X = A;
+			setFlag(CPU_ZERO_FLAG, (X == 0));
+			setFlag(CPU_NEGATIVE_FLAG, (X & 0b10000000) > 0);
+
+			cycles--;
+
+			handled = true;
+			continue;
+		}
+		if (instruction == Instruction::TAY) {
+			Y = A;
+			setFlag(CPU_ZERO_FLAG, (Y == 0));
+			setFlag(CPU_NEGATIVE_FLAG, (Y & 0b10000000) > 0);
+
+			cycles--;
+
+			handled = true;
+			continue;
+		}
+		if (instruction == Instruction::TXA) {
+			A = X;
+			setFlag(CPU_ZERO_FLAG, (A == 0));
+			setFlag(CPU_NEGATIVE_FLAG, (A & 0b10000000) > 0);
+
+			cycles--;
+
+			handled = true;
+			continue;
+		}
+		if (instruction == Instruction::TYA) {
+			A = Y;
+			setFlag(CPU_ZERO_FLAG, (A == 0));
+			setFlag(CPU_NEGATIVE_FLAG, (A & 0b10000000) > 0);
+
+			cycles--;
 
 			handled = true;
 			continue;

@@ -96,7 +96,14 @@ namespace Instruction {
 	// Pull Processor Status		C,Z,I,D,B,V,N
 	static constexpr Byte PLP		= 0x28; // 1 Bytes, 3 Cycles
 
-
+	// Transfer Accumulator to X	Z,N
+	static constexpr Byte TAX		= 0xAA; // 1 Bytes, 2 Cycles
+	// Transfer Accumulator to Y	Z,N
+	static constexpr Byte TAY		= 0xA8; // 1 Bytes, 2 Cycles
+	// Transfer X to Accumulator	Z,N
+	static constexpr Byte TXA		= 0x8A; // 1 Bytes, 2 Cycles
+	// Transfer Y to Accumulator	Z,N
+	static constexpr Byte TYA		= 0x88; // 1 Bytes, 2 Cycles
 
 
 	//
